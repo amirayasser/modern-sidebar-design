@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600;700;900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'poppins' , sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.navigation {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    bottom: 20px;
+    width: 70px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-sizing: initial;
+    border-left: 5px solid #4d5bf9;
+    background-color: #4d5bf9;
+    transition: width 0.5s;
+}
+
+.navigation ul {
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+
+}
+
+.navigation li {
+    position: relative;
+    width: 100%;
+
+}
+
+.navigation li b:nth-child(1) {
+    position: absolute;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+}
+
+.navigation li b:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4d5bf9;
+    border-bottom-right-radius: 20px;
+}
+
+.navigation li b:nth-child(2) {
+    position: absolute;
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background-color: #fff; 
+   display: none;
+
+}
+
+.navigation li b:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4d5bf9;
+    border-top-right-radius: 20px;
+}
+
+.navigation li.active b:nth-child(1) ,
+ .navigation li.active b:nth-child(2) {
+
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: #fff;
+}
+
+.navigation span.icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navigation .icon ion-icon {
+    font-size: 1.5em;
+}
+
+.navigation span.title {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+}
+
+.navigation li.active {
+    background-color: #fff;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation li.active  a{
+    color: #333;
+}
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    left: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 10px;
+    background-color: #4d5bf9;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle.active {
+    background-color: #ff4d89;
+
+}
+
+.toggle ion-icon {
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    display: none;
+}
+
+.toggle .open 
+, .toggle.active .close{
+    display: block;
+
+}
+
+.toggle.active .open, 
+.toggle .close {
+    display: none;
+
+}
+
+
+.navigation.active{
+    width: 300px;
+    overflow: visible;
+}
